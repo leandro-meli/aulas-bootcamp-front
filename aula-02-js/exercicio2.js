@@ -32,7 +32,7 @@ products.forEach((elem) => {
 console.log('exercicios 2', products.map((elem) => elem.name))
 
 // 3. Imprima no console o produto com o id 3.
-console.log('exercicios 3', products.filter((elem) => elem.id === 3))
+console.log('exercicios 3', products.find((elem) => elem.id === 3))
 
 // 4. Imprima no console os produtos com a cor “black”.
 console.log('exercicios 4', products.filter((elem) => {
