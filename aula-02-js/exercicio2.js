@@ -36,7 +36,7 @@ console.log('exercicios 3', products.filter((elem) => elem.id === 3))
 
 // 4. Imprima no console os produtos com a cor “black”.
 console.log('exercicios 4', products.filter((elem) => {
-  return elem.colors.includes('black')
+  elem.colors.includes('black')
 }))
 
 // 5. Imprima no console os produtos que não possuem cor.
