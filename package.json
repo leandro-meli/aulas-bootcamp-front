@@ -6,9 +6,9 @@
   "description": "Repositório destinado a anotações e estudos do bootcamp frontend",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon ./aula03-express/express.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/leandro-meli/aulas-bootcamp-front/issues"
   },
-  "homepage": "https://github.com/leandro-meli/aulas-bootcamp-front#readme"
+  "homepage": "https://github.com/leandro-meli/aulas-bootcamp-front#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
