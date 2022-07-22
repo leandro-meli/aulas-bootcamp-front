@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "name": "bootcamp",
+  "description": "Repositório destinado a anotações e estudos do bootcamp frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandro-meli/aulas-bootcamp-front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandro-meli/aulas-bootcamp-front/issues"
+  },
+  "homepage": "https://github.com/leandro-meli/aulas-bootcamp-front#readme"
+}
