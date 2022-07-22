@@ -23,17 +23,12 @@ app.get('/', (req, res) => {
 
 app.put('/:id', (req, res) => {
   const { id } = req.params;
-  const { name, price, quantity, colors } = req.body;
-  // console.log('id', id, 'req body', req.body)
+  // const { name, price, quantity, colors } = req.body;
   try {
-    // let product = products.find((elem) => elem.id === Number(id))
-    // if (!product) return res.status(404).json({ message: 'Product not found'})
-    // product = { ...product, name, price, quantity, ...colors  }
-    products = products.map((elem) => {
+    products = products.map((elem, i) => {
       if (elem.id === Number(id)) {
-        return { ...elem, name, price, quantity, ...colors}
+        return products.splice(i, 1, req.body)
       }
-
       return elem;
     })
 
@@ -52,7 +47,7 @@ app.delete('/:id', (req, res) => {
     return res.status(404).json({ "message": `Produto de id: ${id} não encontrado` })
   }
 
-  products = products.filter(product => product.id !== Number(id))
+  products = products.filter((elem) => elem.id !== Number(id))
   res.status(204).json(products)
 })
 
