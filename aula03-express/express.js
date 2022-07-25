@@ -25,9 +25,9 @@ app.put('/:id', (req, res) => {
   const { id } = req.params;
   // const { name, price, quantity, colors } = req.body;
   try {
-    products = products.map((elem, i) => {
+    products = products.map((elem, idx) => {
       if (elem.id === Number(id)) {
-        return products.splice(i, 1, req.body)
+        return products.splice(idx, 1, req.body)
       }
       return elem;
     })
