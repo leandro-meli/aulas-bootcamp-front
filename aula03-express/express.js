@@ -42,7 +42,7 @@ app.delete('/:id', (req, res) => {
   const { id } = req.params;
 
   const product = products.find((product) => product.id === Number(id))
-
+  
   if (!product) {
     return res.status(404).json({ "message": `Produto de id: ${id} não encontrado` })
   }
