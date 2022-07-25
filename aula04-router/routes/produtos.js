@@ -1,34 +1,42 @@
-const express = require('express')
-const products = require('../produtos')
+const express = require('express');
+const products = require('../produtos');
 
-const routes = express.Router()
+const routes = express.Router();
 
-const produtos = require('../produtos')
+const produtos = require('../produtos');
 
 routes.get('/', (_req, res) => {
-  return res.status(200).send(produtos)
-})
+  return res.status(200).send(produtos);
+});
 
 routes.get('/:id', (req, res) => {
   const id = Number(req.params.id);
 
-  const produto = produtos.find((elem) => elem.id === id)
+  const produto = produtos.find((elem) => elem.id === id);
 
-  if (!produto) res.status(404).json({ message: 'Product not found' })
+  if (!produto) res.status(404).json({ message: 'Product not found' });
 
-  return res.status(200).json(produtos);
-})
+  return res.status(200).json(produto);
+});
 
 routes.post('/', (req, res) => {
+  console.log(req.body);
   const { name, price, quantity, colors } = req.body;
 
-  if (!name || !price || !quantity || !colors ) {
-    return res.status(400).json({ message: 'The product must have name, price, quantity and colors.' })
+  if (!name || !price || !quantity || !colors) {
+    return res
+      .status(400)
+      .json({
+        message: 'The product must have name, price, quantity and colors.',
+      });
   }
 
-  const newProduct = [...products, name, price, quantity, colors]
+  const newProduct = [
+    ...products,
+    { id: products.length, name, price, quantity, colors },
+  ];
 
-  return res.status(201).json(newProduct)
-})
+  return res.status(201).json(newProduct);
+});
 
 module.exports = routes;
